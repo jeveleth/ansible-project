@@ -1,0 +1,9 @@
+users:
+  - name: dev1
+    groups: admin
+  - name: dev2
+    groups: admin
+  - name: dev3
+    groups: admin
+  - name: dev4
+    groups: admin

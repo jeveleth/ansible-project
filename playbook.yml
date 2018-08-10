@@ -1,16 +1,15 @@
 ---
 - name: User setup
   hosts: localhost
-  become: true
+  become: yes
+  become_user: root
+  vars_files:
+    - vars/users.yml
   tasks:
-      - name: Add developers to production box
-        user:
-          name: "{{ item }}"
-          state: present
-          groups: "admin"
-        loop:
-          - dev1
-          - dev2
-          - dev3
-          - dev4
-        tags: add-users
+    - name: Add developers to production box
+      user:
+        name: "{{ item.name }}"
+        state: present
+        groups: "{{ item.groups }}"
+      with_items: "{{ users }}"
+      tags: add-users

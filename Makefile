@@ -1,5 +1,5 @@
 create-users:
-	ansible-playbook --ask-become-pass playbook.yml --tags add-users
+	ansible-playbook playbook.yml --tags add-users
 
 add-keys:
 	ansible-playbook --ask-become-pass playbook.yml --tags add-keys
