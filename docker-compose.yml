@@ -1,0 +1,8 @@
+version: '3'
+services:
+  nginx-one:
+    build: .
+    container_name: nginx-one
+    hostname: nginx-one-host
+    ports:
+    - "8080:8080"

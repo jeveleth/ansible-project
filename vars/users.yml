@@ -1,9 +1,27 @@
 users:
   - name: dev1
-    groups: admin
+    group: admin
+    state: present
   - name: dev2
-    groups: admin
+    group: admin
+    state: present
   - name: dev3
-    groups: admin
+    group: admin
+    state: present
   - name: dev4
-    groups: admin
+    group: admin
+    state: present
+
+remove_users:
+  - name: dev1
+    group: admin
+    state: absent
+  - name: dev2
+    group: admin
+    state: absent
+  - name: dev3
+    group: admin
+    state: absent
+  - name: dev4
+    group: admin
+    state: absent

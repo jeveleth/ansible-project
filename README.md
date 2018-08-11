@@ -6,6 +6,14 @@ Using configuration management of your choice (Puppet, Chef, Ansible, etc):
     ** remove SSH keys from your developers to revoke it 
     ** on production machines so they can help in troubleshooting and figuring out root cause of bugs. 
 
-    Is ansible being installed on a specific server?
-    // Going to use docker container to mimic the remote (and host?) machines
-// Assumes hosts file with the following hosts configured:
+
+    // Builds local docker container to mimic the remote machines
+To run:
+    make create-host # build the host
+
+<!-- created dummy keys for the purposes of testing. these should *not* be used in a production environment -->
+    ssh-keygen -t rsa -b 4096 -C "dev1@test.com"
+
+    TODO: 
+
+/Users/joshuaeveleth/dev/kong-project/public_keys
