@@ -2,12 +2,14 @@ FROM nginx:alpine
 
 RUN apk add --update \
     python \
+    shadow \
     python-dev \
     py-pip \
     build-base \ 
+    --no-cache bash \
     && pip install virtualenv \
     && rm -rf /var/cache/apk/*
-# This is a hack to add the groupadd utility to alpine
-RUN apk add --update shadow
+
+# Shadow adds the groupadd utility to alpine
 # Need bash to run su
-RUN apk add --no-cache bash
+# Need python to get ansible working in the container
