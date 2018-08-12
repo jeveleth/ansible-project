@@ -6,7 +6,12 @@ This project contains an ansible playbook that:
 * adds SSH keys of your developers to give them access to machines and
 * removes SSH keys from your developers to revoke access to those machines
 
-This assumes make, docker, and ansible are installed on the local machine.
+This assumes make, docker, python, and ansible are installed on the local machine.
+This was created on OSX 10.13.6 with the following software setup:
+
+* ansible 2.6.2
+* python 2.7.15
+* docker 18.06.0-ce (client and engine)
 
 ### To run:
 
