@@ -1,19 +1,37 @@
-Task:
-Using configuration management of your choice (Puppet, Chef, Ansible, etc):
-* create a module/cookbook to:
-    ** create Unix user accounts 
-    ** add SSH keys of your developers to give them access and
-    ** remove SSH keys from your developers to revoke it 
-    ** on production machines so they can help in troubleshooting and figuring out root cause of bugs. 
+## An ansible playbook
 
+This project contains an ansible playbook that:
 
-    // Builds local docker container to mimic the remote machines
-To run:
-    make create-host # build the host
+* creates Unix user accounts
+* adds SSH keys of your developers to give them access to machines and
+* removes SSH keys from your developers to revoke access to those machines
 
-<!-- created dummy keys for the purposes of testing. these should *not* be used in a production environment -->
-    ssh-keygen -t rsa -b 4096 -C "dev1@test.com"
+This assumes make, docker, and ansible are installed on the local machine.
 
-    TODO: 
+### To run:
 
-/Users/joshuaeveleth/dev/kong-project/public_keys
+1. Build a local docker container to mimic the production box
+
+        make create-host # build the host
+
+2. Add group and users:
+
+        make create-group-and-users
+
+3. Add keys:
+
+        make add-keys
+
+4. Revoke keys:
+
+        make revoke-keys
+
+5. Clean up environment:
+
+        make clean-docker
+
+6. Do the whole shebang:
+
+        make do-it-all
+
+**NB**: I created dummy keys for the purposes of testing. These should **not** be used in a production environment.
