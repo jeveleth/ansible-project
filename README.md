@@ -16,6 +16,7 @@ This was created on OSX 10.13.6 with the following software setup:
 It also assumes that you have the following file installed with this content:
 
 /private/etc/ansible/hosts
+       
        [targets]
        nginx-one-host ansible_port=8080 ansible_host=nginx-one ansible_connection=docker
 ### To run:
