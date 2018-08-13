@@ -13,7 +13,7 @@ This was created on OSX 10.13.6 with the following software setup:
 * python 2.7.15
 * docker 18.06.0-ce (client and engine)
 
-It also assumes that you have a /private/etc/ansible/hosts file installed with the following content:
+It also assumes that you have a /etc/ansible/hosts file installed with the following content:
 
        [targets]
        nginx-one-host ansible_port=8080 ansible_host=nginx-one ansible_connection=docker
