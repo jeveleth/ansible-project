@@ -1,14 +1,11 @@
 FROM nginx:alpine
 
-RUN apk add --update \
+RUN apk add --update --no-cache \
     python \
     shadow \
-    python-dev \
     py-pip \
-    build-base \ 
-    --no-cache bash \
-    && pip install virtualenv \
-    && rm -rf /var/cache/apk/*
+    bash \
+    && pip install virtualenv
 
 # Shadow adds the groupadd utility to alpine
 # Need bash to run su
